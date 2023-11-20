@@ -1,7 +1,16 @@
 from flask_openapi3 import OpenAPI, Info, Tag
 from flask import redirect
 from urllib.parse import unquote
+
+from modules.shared.config.db_sqlite import *
 from flask_cors import CORS
+
+# schemas
+from modules.shared.errors.error_schema import ErrorSchema
+from modules.user.schemas import UserSchema, UserResponseSchema, UserLoginSchema
+
+# usecases
+from modules.user.use_cases import create_user, login
 
 
 info = Info(title="API - Maintenance Company", version="1.0.0")
@@ -18,21 +27,21 @@ def home():
     return redirect('/openapi')
 
 
-# # ----------------------------- Users Routes -----------------------------
-# user_tag = Tag(name="Usuário", description="Criação e login de usuários à base de dados.")
+# ----------------------------- Users Routes -----------------------------
+user_tag = Tag(name="Usuário", description="Criação e login de usuários à base de dados.")
 
-# @app.post('/users/create', tags=[user_tag], responses={'200': UserResponseSchema, '409': ErrorSchema, '400': ErrorSchema})
-# def create_user_route(form: UserSchema):
-#     """
-#         Cria novo usuário
-#     """
-#     return create_user(form)
+@app.post('/users/create', tags=[user_tag], responses={'200': UserResponseSchema, '409': ErrorSchema, '400': ErrorSchema})
+def create_user_route(form: UserSchema):
+    """
+        Cria novo usuário
+    """
+    return create_user(form)
 
-# @app.post('/users/login', tags=[user_tag], responses={'200': UserResponseSchema, '400': ErrorSchema, '500': ErrorSchema})
-# def login_route(form: UserLoginSchema):
-#     """
-#         Faz o login de um usuário com seu e-mail e senha.
-#     """
-#     return login(form)
+@app.post('/users/login', tags=[user_tag], responses={'200': UserResponseSchema, '400': ErrorSchema, '500': ErrorSchema})
+def login_route(form: UserLoginSchema):
+    """
+        Faz o login de um usuário com seu e-mail e senha.
+    """
+    return login(form)
 
 
