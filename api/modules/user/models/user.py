@@ -19,7 +19,7 @@ class User(Base):
         self.password = password
 
     def add_equipment(self, equipment: Equipment):
-        self.study_trails.append(equipment)
+        self.equipments.append(equipment)
 
     def serialize(self):
         user = Serializer.serialize(self)
