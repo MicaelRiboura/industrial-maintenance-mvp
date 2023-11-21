@@ -5,14 +5,13 @@ from .abstract_equipment_dao import AbstractEquipmentDAO
 class EquipmentDAO(AbstractEquipmentDAO):
     def create(self, form, user, session = Session()):
         equipment = Equipment(
-           id=form.id,
            type=form.type,
            air_temperature=form.air_temperature,
            process_temperature=form.process_temperature,
            rotation_speed=form.rotation_speed,
            torque=form.torque,
            tool_wear=form.tool_wear,
-           target=form.target
+           target=0
         )
     
         user.add_equipment(equipment)
@@ -20,7 +19,7 @@ class EquipmentDAO(AbstractEquipmentDAO):
 
         user_serialized = user.serialize()
 
-        return user_serialized['equipments'][len(user_serialized['equipment']) - 1]
+        return user_serialized['equipments'][len(user_serialized['equipments']) - 1]
     
     def find_by_user(self, user, session = Session()):
         equipments = session.query(Equipment).filter(Equipment.user == user)
