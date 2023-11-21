@@ -2,6 +2,7 @@ from sqlalchemy import Column, String, Integer
 from sqlalchemy.orm import relationship
 from modules.shared.config.model.base import Base
 from modules.shared.config.model.serializer import Serializer
+from modules.equipment.models.equipment import Equipment
 
 class User(Base):
     __tablename__ = 'user'
@@ -10,22 +11,18 @@ class User(Base):
     name = Column(String(250))
     email = Column(String(250), unique=True)
     password = Column(String(250))
-    study_trails = relationship('StudyTrail')
+    equipments = relationship('Equipment')
 
     def __init__(self, name:str, email: str, password: str):
         self.name = name
         self.email = email
         self.password = password
 
-    def serialize(self, has_items=False):
-        user = Serializer.serialize(self)
-        user['study_trails'] = Serializer.serialize_list(user['study_trails'])
+    def add_equipment(self, equipment: Equipment):
+        self.study_trails.append(equipment)
 
-        if not has_items:
-            for study_trail in user['study_trails']:
-                del study_trail['items']
-        else:
-            for study_trail in user['study_trails']:
-                study_trail['items'] = Serializer.serialize_list(study_trail['items'])
+    def serialize(self):
+        user = Serializer.serialize(self)
+        user['equipments'] = Serializer.serialize_list(user['equipments'])
 
         return user
