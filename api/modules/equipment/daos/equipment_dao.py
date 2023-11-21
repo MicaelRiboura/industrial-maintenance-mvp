@@ -1,9 +1,15 @@
 from modules.shared.config.db_sqlite import Session
 from modules.equipment.models import Equipment
 from .abstract_equipment_dao import AbstractEquipmentDAO
+from modules.equipment.models.machine_learning_model import Model
 
 class EquipmentDAO(AbstractEquipmentDAO):
     def create(self, form, user, session = Session()):
+
+         # Carregando modelo
+        ml_path = 'model_ml/model.pkl'
+        model = Model.load_model(ml_path)
+
         equipment = Equipment(
            type=form.type,
            air_temperature=form.air_temperature,
@@ -11,7 +17,7 @@ class EquipmentDAO(AbstractEquipmentDAO):
            rotation_speed=form.rotation_speed,
            torque=form.torque,
            tool_wear=form.tool_wear,
-           target=0
+           target=Model.predictor(model, form)
         )
     
         user.add_equipment(equipment)
