@@ -1,7 +1,6 @@
 import numpy as np
 import pickle
 import joblib
-from sklearn.preprocessing import MinMaxScaler
 
 class Model:
     def load_model(path):
@@ -37,16 +36,7 @@ class Model:
                             form.torque,
                             form.tool_wear,
                         ])
-        print(X_input)
-
-
-        # Create an instance of MinMaxScaler
-        scaler = MinMaxScaler()
-
-        scaled_data = scaler.fit_transform(X_input)
-
-        print(scaled_data)
 
         # Faremos o reshape para que o modelo entenda que estamos passando
-        diagnosis = model.predict(scaled_data.reshape(1, -1))
+        diagnosis = model.predict(X_input.reshape(1, -1))
         return int(diagnosis[0])
