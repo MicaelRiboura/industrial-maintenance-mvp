@@ -1,14 +1,15 @@
 import './App.css';
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Routes from './routes';
 
 function App() {
   return (
-    <div className="text-3xl font-bold bg-dark-400" style={{ minHeight: '100vh', minWidth: '100vw' }}>
-      <header className="bg-dark-800" style={{ height: '80px'}}>
-
-      </header>
-      <h1 className="m-3 text-white">Hello world!</h1>
-      
-    </div>
+    // <Home />
+    // <SignIn />
+    // <SignUp />
+    <Routes />
   );
 }
 
