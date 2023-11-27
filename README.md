@@ -1,4 +1,6 @@
-# Industrial Maintenance MVP
+<p align="center" style="margin: 40px 0">
+    <img src="./front/src/assets/images/logo.svg" height="100px">
+</p>
 
 <div align="center">
 
