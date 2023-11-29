@@ -1,15 +1,17 @@
 import './App.css';
-import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { AuthProvider } from './contexts/AuthContextApiHook';
 import Routes from './routes';
 
 function App() {
   return (
-    // <Home />
-    // <SignIn />
-    // <SignUp />
-    <Routes />
+    <AuthProvider>
+        <ToastContainer />
+        <Routes />
+    </AuthProvider>
   );
 }
 
