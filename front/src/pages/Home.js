@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Header from "../components/Header";
 import Table from "../components/Table";
 import HomeForm from "../components/forms/HomeForm";
@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContextApiHook";
 
 export default function Home() {
-    const { signed } = useAuth();
+    const { signed, user } = useAuth();
     const navigate = useNavigate();
+    const [equipments, setEquipments] = useState([]);
 
     useEffect(() => {
         console.log(signed)
@@ -15,6 +16,35 @@ export default function Home() {
             navigate('/');
         }
     }, [signed, navigate]);
+
+    const loadEquipments = useCallback(() => {
+        if (signed && user) {
+            const url = `http://localhost:5000/equipments/user?user_id=${user.id}`;
+            fetch(url, {
+                method: 'get',
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                    console.log(user.id)
+                    setEquipments(data.equipments);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    }, [user, signed]);
+
+
+    useEffect(() => {
+        loadEquipments();
+    }, [loadEquipments]);
+
+    const qualityDict = {
+        'L': 'Baixa',
+        'M': 'Média',
+        'H': 'Alta',
+    }
 
     return (
         <div className="bg-dark-400" style={{ minHeight: '100vh', minWidth: '100%' }}>
@@ -35,58 +65,17 @@ export default function Home() {
                         'Desgaste da Ferramenta',
                         'Diagnóstico',
                     ]}
-                    data={[
-                        {
-                            productId: 1,
-                            type: 1,
-                            airTemperature: 1,
-                            processTemperature: 1,
-                            speedRotation: 1,
-                            torque: 1,
-                            toolWear: 1,
-                            target: 1,
-                        },
-                        {
-                            productId: 1,
-                            type: 1,
-                            airTemperature: 1,
-                            processTemperature: 1,
-                            speedRotation: 1,
-                            torque: 1,
-                            toolWear: 1,
-                            target: 1,
-                        },
-                        {
-                            productId: 1,
-                            type: 1,
-                            airTemperature: 1,
-                            processTemperature: 1,
-                            speedRotation: 1,
-                            torque: 1,
-                            toolWear: 1,
-                            target: 1,
-                        },
-                        {
-                            productId: 1,
-                            type: 1,
-                            airTemperature: 1,
-                            processTemperature: 1,
-                            speedRotation: 1,
-                            torque: 1,
-                            toolWear: 1,
-                            target: 1,
-                        },
-                        {
-                            productId: 1,
-                            type: 1,
-                            airTemperature: 1,
-                            processTemperature: 1,
-                            speedRotation: 1,
-                            torque: 1,
-                            toolWear: 1,
-                            target: 1,
-                        },
-                    ]}
+                    data={equipments.map(equip => ({
+                        id: equip.id,
+                        type: qualityDict[equip.type],
+                        airTemperature: String(equip.air_temperature.toFixed(2)).replace('.', ','),
+                        processTemperature: String(equip.process_temperature.toFixed(2)).replace('.', ','),
+                        rotationSpeed: equip.rotation_speed,
+                        torque: String(equip.torque.toFixed(2)).replace('.', ','),
+                        toolWear: equip.tool_wear,
+                        target: equip.target === 1 ? 'Apresenta Falha' : 'Não apresenta falha'
+
+                    }))}
                 />
             </div>
         </div>
