@@ -1,7 +1,7 @@
 export default function Select({ name, label, groupClassName, options }) {
     return (
         <div className={groupClassName}>
-            <label for={name} className="block mb-2 text-sm font-medium text-white">{label}</label>
+            <label htmlFor={name} className="block mb-2 text-sm font-medium text-white">{label}</label>
             <select
                 id={name}
                 name={name}
