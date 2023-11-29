@@ -82,9 +82,9 @@ export default function Home() {
                         'Qualidade',
                         'Temperatura do Ar (°C)',
                         'Temperatura do Processo (°C)',
-                        'Velocidade de Rotação',
+                        'Velocidade de Rotação (RPM)',
                         'Torque',
-                        'Desgaste da Ferramenta',
+                        'Desgaste da Ferramenta (Min.)',
                         'Diagnóstico',
                         'Ações',
                     ]}

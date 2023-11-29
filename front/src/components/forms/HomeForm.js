@@ -112,7 +112,7 @@ export default function HomeForm() {
                     <Input
                         type="number"
                         name="speedRotation"
-                        label="Velocidade de Rotação"
+                        label="Velocidade de Rotação (RPM)"
                         groupClassName="px-3"
                     />
                 </div>
@@ -128,7 +128,7 @@ export default function HomeForm() {
                     <Input
                         type="number"
                         name="toolWear"
-                        label="Desgaste da Ferramenta"
+                        label="Desgaste da Ferramenta (Min.)"
                         groupClassName="px-3"
                     />
                 </div>
