@@ -1,4 +1,5 @@
 from ..daos.user_dao import UserDAO
+import bcrypt
 
 def login(form):
     try:
@@ -10,9 +11,11 @@ def login(form):
             error_msg = "Login ou senha incorretos!"
             return {"message": error_msg}, 400
         else:
-            if user_response['email'] == form.email and user_response['password'] == form.password:
-                del user_response['password']
-                return user_response, 200
+            if user_response.email == form.email and bcrypt.checkpw(form.password.encode('utf-8'), user_response.password.encode('utf-8')):
+                user_serialized = user_response.serialize()
+                del user_serialized['password']
+                
+                return user_serialized, 200
             else:
                 error_msg = "Login ou senha incorretos!"
                 return {"message": error_msg}, 400

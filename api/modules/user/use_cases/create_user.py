@@ -1,11 +1,17 @@
 from ..daos.user_dao import UserDAO
 from sqlalchemy.exc import IntegrityError
+import bcrypt
 
 def create_user(form):
     try:
         userDAO = UserDAO()
 
+        hashed = bcrypt.hashpw(form.password.encode('utf-8'), bcrypt.gensalt())
+        form.password = hashed.decode('utf-8')
+
         user = userDAO.create(form)
+
+        del user['password']
         
         return user, 200
 

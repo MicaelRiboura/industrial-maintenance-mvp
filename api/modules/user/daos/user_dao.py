@@ -26,9 +26,7 @@ class UserDAO(AbstractUserDAO):
         if not user:
             return None
 
-        user_serialized = user.serialize()
-
-        return user_serialized
+        return user
 
     def find_by_id(self, id, session=Session()):
         user = session.query(User).filter(User.id == id).first()
