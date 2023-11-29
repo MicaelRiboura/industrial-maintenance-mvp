@@ -4,6 +4,7 @@ from urllib.parse import unquote
 
 from modules.shared.config.db_sqlite import *
 from flask_cors import CORS
+import pytest
 
 # schemas
 from modules.shared.errors.error_schema import ErrorSchema
