@@ -7,7 +7,7 @@ export default function Header() {
     const { signed, user, signOut } = useAuth();
 
     return (
-        <header className="bg-dark-800" style={{ height: '80px' }}>
+        <header className="bg-dark-800 fixed w-full" style={{ height: '80px', zIndex: 4 }}>
             <div className="h-full flex items-center justify-between" style={{ margin: 'auto', maxWidth: '1440px' }}>
                 <img src={Logo} alt="RelEquip Logo" className="mb-4" style={{ height: '60px' }} />
                 {signed && (
