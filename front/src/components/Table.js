@@ -11,9 +11,6 @@ export default function Table({ heads = [], data = [] }) {
                                 {head}
                             </th>
                         ))}
-                        <th key={`head-${heads.length}`} scope="col" className="px-6 py-3">
-                            Ações
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,9 +22,6 @@ export default function Table({ heads = [], data = [] }) {
                                 </td>
                                 
                             ))}
-                            <td key={`td-${data.length}`} className="px-6 py-4 font-medium whitespace-nowrap text-white">
-                                <FaTrashAlt className="text-lg text-red-400 cursor-pointer" />
-                            </td>
                         </tr>
                     ))) : (
                             <tr className="bg-gray-700 border-b border-dark-800">
