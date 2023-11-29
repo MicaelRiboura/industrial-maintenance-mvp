@@ -1,78 +1,41 @@
-export default function Table() {
+import { FaTrashAlt } from "react-icons/fa";
+
+export default function Table({ heads = [], data = [] }) {
     return (
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs uppercase bg-dark-800 text-white">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mb-8">
+                <thead className="text-xs uppercase bg-dark-800 text-white">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
-                            Product name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Color
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Category
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Price
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Action
+                        {heads.map((head, index) => (
+                            <th key={`head-${index}`} scope="col" className="px-6 py-3">
+                                {head}
+                            </th>
+                        ))}
+                        <th key={`head-${heads.length}`} scope="col" className="px-6 py-3">
+                            Ações
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-gray-800 border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Apple MacBook Pro 17"
-                        </th>
-                        <td class="px-6 py-4">
-                            Silver
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop
-                        </td>
-                        <td class="px-6 py-4">
-                            $2999
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-gray-800 border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Microsoft Surface Pro
-                        </th>
-                        <td class="px-6 py-4">
-                            White
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop PC
-                        </td>
-                        <td class="px-6 py-4">
-                            $1999
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
-                    <tr class="bg-gray-800 dark:bg-gray-800">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Magic Mouse 2
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Accessories
-                        </td>
-                        <td class="px-6 py-4">
-                            $99
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        </td>
-                    </tr>
+                    {(data && data.length > 0) ? (data.map((item, index) => (
+                        <tr key={`tr-${index}`} className="bg-gray-700 border-b border-dark-800">
+                            {Object.values(item).map((value, index) => (
+                                <td key={`td-${index}`} className="px-6 py-4 font-medium whitespace-nowrap text-white">
+                                    {value}
+                                </td>
+                                
+                            ))}
+                            <td key={`td-${data.length}`} className="px-6 py-4 font-medium whitespace-nowrap text-white">
+                                <FaTrashAlt className="text-lg text-red-400 cursor-pointer" />
+                            </td>
+                        </tr>
+                    ))) : (
+                            <tr className="bg-gray-700 border-b border-dark-800">
+                                <td colSpan={heads.length + 1} className="px-6 py-4 font-medium text-center whitespace-nowrap text-white">
+                                    Nenhum registro encontrado!
+                                </td>
+                            </tr>
+                    )}
                 </tbody>
             </table>
         </div>

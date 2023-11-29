@@ -11,7 +11,70 @@ export default function Home() {
                 <p className="text-xl  mb-12 text-white opacity-80">Diagnostique o equipamento de sua empresa com base em condições futuras de funcionamento!</p>
                 <HomeForm />
                 <h2 class="mt-12 mb-4 font-bold text-white text-xl">Minhas Análises</h2>
-                <Table />
+                <Table
+                    heads={[
+                        'ID do Produto',
+                        'Qualidade',
+                        'Temperatura do Ar',
+                        'Temperatura do Processo',
+                        'Velocidade de Rotação',
+                        'Torque',
+                        'Desgaste da Ferramenta',
+                        'Diagnóstico',
+                    ]}
+                    data={[
+                        {
+                            productId: 1,
+                            type: 1,
+                            airTemperature: 1,
+                            processTemperature: 1,
+                            speedRotation: 1,
+                            torque: 1,
+                            toolWear: 1,
+                            target: 1,
+                        },
+                        {
+                            productId: 1,
+                            type: 1,
+                            airTemperature: 1,
+                            processTemperature: 1,
+                            speedRotation: 1,
+                            torque: 1,
+                            toolWear: 1,
+                            target: 1,
+                        },
+                        {
+                            productId: 1,
+                            type: 1,
+                            airTemperature: 1,
+                            processTemperature: 1,
+                            speedRotation: 1,
+                            torque: 1,
+                            toolWear: 1,
+                            target: 1,
+                        },
+                        {
+                            productId: 1,
+                            type: 1,
+                            airTemperature: 1,
+                            processTemperature: 1,
+                            speedRotation: 1,
+                            torque: 1,
+                            toolWear: 1,
+                            target: 1,
+                        },
+                        {
+                            productId: 1,
+                            type: 1,
+                            airTemperature: 1,
+                            processTemperature: 1,
+                            speedRotation: 1,
+                            torque: 1,
+                            toolWear: 1,
+                            target: 1,
+                        },
+                    ]}
+                />
             </div>
         </div>
     );
