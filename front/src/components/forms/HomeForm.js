@@ -71,7 +71,7 @@ export default function HomeForm() {
     return (
         <form className="flex flex-wrap" method="post" onSubmit={onSubmit}>
             <div className="flex flex-wrap">
-                <div className="w-1/4 my-3 pr-4">
+                <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Select
                         name="type"
                         label="Qualidade"
@@ -92,7 +92,7 @@ export default function HomeForm() {
                         ]}
                     />
                 </div>
-                <div className="w-1/4 my-3 pr-4">
+                <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
                         type="number"
                         name="airTemperature"
@@ -100,7 +100,7 @@ export default function HomeForm() {
                         groupClassName="px-3"
                     />
                 </div>
-                <div className="w-1/4 my-3 pr-4">
+                <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
                         type="number"
                         name="processTemperature"
@@ -108,7 +108,7 @@ export default function HomeForm() {
                         groupClassName="px-3"
                     />
                 </div>
-                <div className="w-1/4 my-3 pr-4">
+                <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
                         type="number"
                         name="speedRotation"
@@ -116,7 +116,7 @@ export default function HomeForm() {
                         groupClassName="px-3"
                     />
                 </div>
-                <div className="w-1/4 my-3 pr-4">
+                <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
                         type="number"
                         name="torque"
@@ -124,7 +124,7 @@ export default function HomeForm() {
                         groupClassName="px-3"
                     />
                 </div>
-                <div className="w-1/4 my-3 pr-4">
+                <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
                         type="number"
                         name="toolWear"

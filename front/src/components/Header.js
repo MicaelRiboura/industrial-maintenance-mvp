@@ -8,8 +8,8 @@ export default function Header() {
 
     return (
         <header className="bg-dark-800 fixed w-full" style={{ height: '80px', zIndex: 4 }}>
-            <div className="h-full flex items-center justify-between" style={{ margin: 'auto', maxWidth: '1440px' }}>
-                <img src={Logo} alt="RelEquip Logo" className="mb-4" style={{ height: '60px' }} />
+            <div className="h-full flex px-2 md:px-8 2xl:px-0 items-center justify-between" style={{ margin: 'auto', maxWidth: '1440px' }}>
+                <img src={Logo} alt="RelEquip Logo" className="mb-4 h-12 2xl:h-16" />
                 {signed && (
                     <div className="flex items-center text-white font-bold">
                         <FaUserCircle className="text-lg mr-2" />
