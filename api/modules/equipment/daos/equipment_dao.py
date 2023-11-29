@@ -12,8 +12,8 @@ class EquipmentDAO(AbstractEquipmentDAO):
 
         equipment = Equipment(
            type=form.type,
-           air_temperature=form.air_temperature,
-           process_temperature=form.process_temperature,
+           air_temperature=(form.air_temperature + 273), # Transforma de Celsius para Kelvin
+           process_temperature=(form.process_temperature + 273), # Transforma de Celsius para Kelvin
            rotation_speed=form.rotation_speed,
            torque=form.torque,
            tool_wear=form.tool_wear,
