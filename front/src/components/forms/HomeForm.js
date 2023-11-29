@@ -8,8 +8,8 @@ export default function HomeForm() {
             <div className="flex flex-wrap">
                 <div className="w-1/4 my-3 pr-4">
                     <Select
-                        name="productID"
-                        label="Tipo de Qualidade"
+                        name="type"
+                        label="Qualidade"
                         groupClassName="px-3"
                         options={[
                             {
@@ -30,7 +30,7 @@ export default function HomeForm() {
                 <div className="w-1/4 my-3 pr-4">
                     <Input
                         type="number"
-                        name="productID"
+                        name="airTemperature"
                         label="Temperatura do Ar (°C)"
                         groupClassName="px-3"
                     />
@@ -38,7 +38,7 @@ export default function HomeForm() {
                 <div className="w-1/4 my-3 pr-4">
                     <Input
                         type="number"
-                        name="productID"
+                        name="processTemperature"
                         label="Temperatura do Processo (°C)"
                         groupClassName="px-3"
                     />
@@ -46,7 +46,7 @@ export default function HomeForm() {
                 <div className="w-1/4 my-3 pr-4">
                     <Input
                         type="number"
-                        name="productID"
+                        name="speedRotation"
                         label="Velocidade de Rotação"
                         groupClassName="px-3"
                     />
@@ -54,7 +54,7 @@ export default function HomeForm() {
                 <div className="w-1/4 my-3 pr-4">
                     <Input
                         type="number"
-                        name="productID"
+                        name="torque"
                         label="Torque"
                         groupClassName="px-3"
                     />
@@ -62,7 +62,7 @@ export default function HomeForm() {
                 <div className="w-1/4 my-3 pr-4">
                     <Input
                         type="number"
-                        name="productID"
+                        name="toolWear"
                         label="Desgaste da Ferramenta"
                         groupClassName="px-3"
                     />
