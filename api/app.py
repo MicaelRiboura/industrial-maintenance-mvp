@@ -23,7 +23,7 @@ from modules.equipment.use_cases import create_equipment, \
     delete_equipment
 
 
-info = Info(title="API - Maintenance Company", version="1.0.0")
+info = Info(title="API - RelEquip", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 CORS(app)
 
@@ -37,7 +37,7 @@ def home():
     return redirect('/openapi')
 
 # ----------------------------- Users Routes -----------------------------
-user_tag = Tag(name="Usuário", description="Criação e login de usuários à base de dados.")
+user_tag = Tag(name="Usuários", description="Criação e login de usuários à base de dados.")
 
 @app.post('/users/create', tags=[user_tag], responses={'200': UserResponseSchema, '409': ErrorSchema, '400': ErrorSchema})
 def create_user_route(form: UserSchema):
