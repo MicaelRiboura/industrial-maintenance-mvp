@@ -8,7 +8,7 @@ class TestMachineLearning():
         ml_model = pickle.load(open(ml_path, 'rb'))
 
         dataset_loader = DatasetLoader()
-        loaded_dataset = dataset_loader.load_dataset(url='model_ml/dataset/predictive_maintenance.csv')
+        loaded_dataset = dataset_loader.load_dataset(url='model_ml/dataset/maintenance_golden.csv')
         prepared_dataset = dataset_loader.pre_process(dataset=loaded_dataset)
         X, y = dataset_loader.divide_IO(dataset=prepared_dataset)
         
