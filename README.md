@@ -14,7 +14,7 @@
 </div>
 
 ## Sobre
-Aplicação Web que, através de um modelo de machine-learning embarcado no Back-end, é capaz de identificar se uma máquina industrial dentro de uma empresa apresenta alguma falha, tornando-se viável a previsão e prevenção de falhas de equipamentos em cenários futuros.
+Aplicação Web que, através de um modelo de machine-learning embarcado no Back-end, é capaz de identificar se uma máquina industrial dentro de uma empresa apresenta alguma falha, tornando-se viável a prevenção de falhas de equipamentos em cenários futuros.
 
 ## Criação do modelo de Machine Learning
 
