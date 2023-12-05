@@ -18,7 +18,7 @@ Aplicação Web que, através de um modelo de machine-learning embarcado no Back
 
 ## Criação do modelo de Machine Learning
 
-A criação do modelo de Machine Learning utilizado nessa aplicação está presente em um notebook do Google Colab e pode ser acessada [clicando aqui](https://colab.research.google.com/drive/1fSGnvryvNEgY_4oq7OJRIKYlUWdh-xej?usp=sharing).
+A criação do modelo de Machine Learning utilizado nessa aplicação está presente em um notebook do Google Colab e pode ser acessado [clicando aqui](https://colab.research.google.com/drive/1fSGnvryvNEgY_4oq7OJRIKYlUWdh-xej?usp=sharing).
 
 
 ## Clonando o repositório
@@ -28,9 +28,10 @@ Antes de tudo, precisamos clonar o projeto para ser executado em sua máquina. V
 git clone https://github.com/MicaelRiboura/industrial-maintenance-mvp.git
 ```
 
-> ⚠️ Após clonar o repositório, é necessário ir ao diretório raiz do projeto, pelo terminal, para poder executar os comandos descritos abaixo.
 
 ## Executando o Back-end
+
+> ⚠️ Após clonar o repositório, é necessário ir ao diretório raiz do projeto e acessar a pasta `api`, pelo terminal, para poder executar os comandos descritos abaixo.
 
 Para executar a aplicação é necessário ter todas as libs (bibliotecas) python listadas no arquivo `requirements.txt` instaladas. 
 
@@ -87,6 +88,8 @@ localhost:5000
 > ⚠️ O símbolo *(env)$* é apenas para ilustrar um terminal com o virtualenv ativado, não pertencendo aos comandos apresentados acima.
 
 ## Executando o Front-end
+
+> ⚠️ Após clonar o repositório, é necessário ir ao diretório raiz do projeto e acessar a pasta `front`, pelo terminal, para poder executar os comandos descritos abaixo.
 
 Para executar a aplicação é necessário ter todas as libs (bibliotecas) JavaScript listadas no arquivo `package.json` instaladas. 
 
