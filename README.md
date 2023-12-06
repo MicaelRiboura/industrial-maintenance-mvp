@@ -16,9 +16,13 @@
 ## Sobre
 Aplicação Web que, através de um modelo de machine-learning embarcado no Back-end, é capaz de identificar se uma máquina industrial dentro de uma empresa apresenta alguma falha, tornando-se viável a prevenção de falhas de equipamentos em cenários futuros.
 
+Vídeo de apresentação: 
+
+Projeto desenvolvido para o MVP na Sprint 2 da Pós Graduação de Engenharia de Software da PUC-Rio.
+
 ## Criação do modelo de Machine Learning
 
-A criação do modelo de Machine Learning utilizado nessa aplicação está presente em um notebook do Google Colab e pode ser acessado [clicando aqui](https://colab.research.google.com/drive/1fSGnvryvNEgY_4oq7OJRIKYlUWdh-xej?usp=sharing).
+A criação do modelo de Machine Learning utilizado nessa aplicação está presente em um notebook do Google Colab e pode ser acessado [clicando aqui](https://colab.research.google.com/drive/1fSGnvryvNEgY_4oq7OJRIKYlUWdh-xej?usp=sharing) ou através de uma cópia contida neste repositório.
 
 ## Segurança
 
@@ -87,6 +91,14 @@ Ao final, cole esse endereço no seu navegador para visualizar a documentação 
 
 ```
 localhost:5000
+```
+
+### 4 - Executando os testes do modelo de Machine Learning na API
+
+Para rodar os testes unitários do modelo de machine learning, é necessário rodar o comando abaixo:
+
+```
+(env)$ python -m pytest
 ```
 
 > ⚠️ O símbolo *(env)$* é apenas para ilustrar um terminal com o virtualenv ativado, não pertencendo aos comandos apresentados acima.
