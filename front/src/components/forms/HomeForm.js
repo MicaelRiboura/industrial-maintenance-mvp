@@ -94,6 +94,7 @@ export default function HomeForm() {
                 </div>
                 <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
+                     step="0.01"
                         type="number"
                         name="airTemperature"
                         label="Temperatura do Ar (°C)"
@@ -102,6 +103,7 @@ export default function HomeForm() {
                 </div>
                 <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
+                     step="0.01"
                         type="number"
                         name="processTemperature"
                         label="Temperatura do Processo (°C)"
@@ -110,6 +112,7 @@ export default function HomeForm() {
                 </div>
                 <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
+                     step="0.01"
                         type="number"
                         name="speedRotation"
                         label="Velocidade de Rotação (RPM)"
@@ -118,6 +121,7 @@ export default function HomeForm() {
                 </div>
                 <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
+                     step="0.01"
                         type="number"
                         name="torque"
                         label="Torque"
@@ -126,6 +130,7 @@ export default function HomeForm() {
                 </div>
                 <div className="w-full md:w-1/2 lg:w-1/4 my-3 pr-4">
                     <Input
+                        step="0.01"
                         type="number"
                         name="toolWear"
                         label="Desgaste da Ferramenta (Min.)"
