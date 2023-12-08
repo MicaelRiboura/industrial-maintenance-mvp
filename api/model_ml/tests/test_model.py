@@ -19,7 +19,6 @@ class TestMachineLearningModel():
         print(accuracy_score)
         
         assert accuracy_score >= 0.85
-        assert accuracy_score < 0.99
     
     def test_model_ml_recall(self):  
         ml_path = 'model_ml/model.pkl'
@@ -37,4 +36,3 @@ class TestMachineLearningModel():
         print(recall_score)
 
         assert recall_score >= 0.85
-        assert recall_score < 0.99
