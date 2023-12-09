@@ -24,6 +24,8 @@ Projeto desenvolvido para o MVP na Sprint 2 da Pós Graduação de Engenharia de
 
 A criação do modelo de Machine Learning utilizado nessa aplicação está presente em um notebook do Google Colab e pode ser acessado [clicando aqui](https://colab.research.google.com/drive/1fSGnvryvNEgY_4oq7OJRIKYlUWdh-xej?usp=sharing) ou através de uma cópia contida neste repositório.
 
+> ⚠️ Para executar os comando do notebook do Google Colab, é necessário apenas que esteja autenticado em uma conta Google.
+
 ## Segurança
 
 Pensando na segurança do acesso aos dados, todas as análises de predições feitas por uma empresa poderão ser somente acessadas por ela através de um login de usuário. Todas as senhas dos usuários presentes no banco de dados são criptografadas.
