@@ -16,7 +16,7 @@
 ## Sobre
 Aplicação Web que, através de um modelo de machine-learning embarcado no Back-end, é capaz de identificar se uma máquina industrial dentro de uma empresa apresenta alguma falha, tornando-se viável a prevenção de falhas de equipamentos em cenários futuros.
 
-Vídeo de apresentação: 
+[Vídeo de apresentação ](https://youtu.be/nwTVusGNhy8)
 
 Projeto desenvolvido para o MVP na Sprint 2 da Pós Graduação de Engenharia de Software da PUC-Rio.
 
